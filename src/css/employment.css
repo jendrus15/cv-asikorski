@@ -1,0 +1,25 @@
+.employment-item {
+  margin-bottom: 35px;
+}
+
+.employment-item__company-details {
+  font-weight: bold;
+}
+
+.employment-item__place {
+  font-size: .8rem;
+  
+  margin-bottom: 10px;
+}
+
+.employment-item__time {
+  margin-bottom: 10px;
+}
+
+.employment-item__description {
+  margin-bottom: 40px;
+}
+
+.employment-item:last-child .employment-item__description {
+  margin-bottom: 10px;
+}

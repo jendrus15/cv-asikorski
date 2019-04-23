@@ -1,0 +1,12 @@
+.skills-item {
+  margin: 10px 0;
+}
+
+.skills-item__rate {
+  color: grayscale;
+  letter-spacing: 3px;
+}
+
+.skills-item__rate-matched {
+  color: gold;
+}

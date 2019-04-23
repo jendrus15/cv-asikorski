@@ -1,0 +1,12 @@
+.education-item {
+  margin-bottom: 35px;
+}
+
+.education-item__school-details {
+  font-weight: bold;
+}
+
+.education-item__details {
+  font-size: .8rem;
+  margin-bottom: 10px;
+}
