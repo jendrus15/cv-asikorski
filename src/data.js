@@ -1,3 +1,19 @@
+import html from './images/html_5.png';
+import sass from './images/sass.png';
+import js from './images/js.png';
+import es6 from './images/es6.png';
+import react from './images/react.png';
+import redux from './images/redux.png';
+import node from './images/node.png';
+import jquery from './images/jquery.png';
+import webpack from './images/webpack.png';
+import git from './images/git.png';
+import grunt from './images/grunt.png';
+import ko from './images/knockout.png';
+
+import english from './images/eng.png';
+import polish from './images/pl.png';
+
 export const info = {
   name: 'Andrzej Sikorski',
   position: 'Web Developer',
@@ -7,7 +23,7 @@ export const info = {
   links: [
     { name: 'LinkedIn', href: 'https://www.linkedin.com/in/andrzej-sikorski' }
   ],
-  hobby: ['Guitar, Piano and Drums', 'Games']
+  hobby: ['Guitar, Piano and Drums']
 };
 
 export const employment = [
@@ -62,19 +78,21 @@ export const courses = [
 ];
 
 export const skills = [
-  { name: 'HTML & CSS', rate: 5 },
-  { name: 'SASS', rate: 4 },
-  { name: 'JavaScript', rate: 4 },
-  { name: 'jQuery', rate: 4 },
-  { name: 'ES6', rate: 3 },
-  { name: 'React', rate: 2 },
-  { name: 'Redux', rate: 2 },
-  { name: 'Node.js', rate: 2 },
-  { name: 'Git', rate: 4 },
-  { name: 'Asia', rate: 5 }
+  { name: 'HTML & CSS', rate: 5, icon: html },
+  { name: 'SASS', rate: 4, icon: sass },
+  { name: 'JavaScript', rate: 4, icon: js },
+  { name: 'jQuery', rate: 4, icon: jquery },
+  { name: 'ES6', rate: 3, icon: es6 },
+  { name: 'React', rate: 2, icon: react },
+  { name: 'Redux', rate: 2, icon: redux },
+  { name: 'Webpack', rate: 2, icon: webpack },
+  { name: 'Node.js', rate: 2, icon: node },
+  { name: 'Git', rate: 4, icon: git },
+  { name: 'Grunt', rate: 4, icon: grunt },
+  { name: 'Knockout.js', rate: 4, icon: ko }
 ];
 
 export const languages = [
-  { name: 'English', rate: 4 },
-  { name: 'Polish', rate: '(native speaker)' }
+  { name: 'English', rate: 4, icon: english },
+  { name: 'Polish', rate: '(native speaker)', icon: polish }
 ];

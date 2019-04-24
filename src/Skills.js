@@ -3,14 +3,15 @@ import SectionHeader from './SectionHeader.js';
 
 import './css/skills.css';
 
-class Skill extends Component {
+class SkillStar extends Component {
   render() {
+
     let stars = [];
     
     if(typeof this.props.data.rate !== 'number') {
       if(typeof this.props.data.rate === 'string') {
         stars.push(
-          <span key={i} className='skills-item__rate skills-item__rate-text'>{this.props.data.rate}</span>
+          <span key={0} className='skills-item__rate skills-item__rate-text'>{this.props.data.rate}</span>
         );
       } else {
         return;
@@ -31,22 +32,78 @@ class Skill extends Component {
     
     return (
       <div className='skills-item'>
-        <div>{this.props.data.name}</div>
-        <div>{stars}</div>
+        {this.props.data.icon && 
+            <img className='skills-item__icon' src={this.props.data.icon} alt="Icon"/>            
+        }
+        {!this.props.data.icon && 
+            <div className='skills-item__icon'></div>
+        }
+        <div>
+            <div>{this.props.data.name}</div>
+            <div>{stars}</div>
+        </div>
+      </div>
+    )
+  }
+}
+
+class SkillBar extends Component {
+  render() {
+    
+    return (
+      <div className='skills-item'>
+        {this.props.data.icon && 
+            <img className='skills-item__icon' src={this.props.data.icon} alt="Icon"/>            
+        }
+        {!this.props.data.icon && 
+            <div className='skills-item__icon'></div>
+        }
+        <div className='skills-item__container'>
+            <div>{this.props.data.name}</div>
+            <div className='skills-item__bar'><div className={'skills-item__bar-inner skills-item__bar_' + this.props.data.rate * 20}></div></div>
+        </div>
       </div>
     )
   }
 }
 
 class Skills extends Component {
+    constructor(props) {
+        super(props);
+        
+        this.state = {
+            all: props.data,
+            show: (props.max) ? props.data.slice(0, props.max) : props.data,
+            showAll: false
+        }
+        
+        this.toggleState = this.toggleState.bind(this);
+    }
+    
+    toggleState() {
+        this.setState({
+            showAll: !this.state.showAll
+        })
+    }
+
   render() {
+      
+      const usedData = this.state.showAll ? this.state.all : this.state.show;
+      const linkText = this.state.showAll ? 'Show less' : 'Show more';
+      
     return (
       <div className="cv-section">
         <SectionHeader title={this.props.title} />
         
-        {this.props.data.map((item, index) => {
-          return <Skill data={item} key={index} />
-        })}
+        <div className='skills__items'>
+            {usedData.map((item, index) => {
+              return <SkillBar data={item} key={index} />
+            })}
+        </div>
+
+        {this.props.max &&
+            <a className='skills__toggle-button' onClick={this.toggleState}>{linkText}</a>
+        }
       </div>
     );
   }

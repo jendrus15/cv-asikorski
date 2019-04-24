@@ -1,13 +1,20 @@
 body {
   background-color: #282c34;
-  color: #fff;
   color: #bcbcbc;
   
-  font-size: 16px;
+  font-size: 14px;
   padding: 15px;
   
-  max-width: 1240px;
+  max-width: 1000px;
   margin: 0 auto;
+}
+
+a {
+    color: #bcbcbc;
+    text-decoration: none;
+    
+    width: 100%;
+    display: inline-block;
 }
 
 .cv-header {
@@ -17,7 +24,7 @@ body {
 }
 
 .cv-header__logo {
-  height: 25vmin;
+  height: 15vmin;
   margin-right: 30px;
 }
 
@@ -42,8 +49,7 @@ body {
 
 main {
   display: grid;
-  
-  grid-template-columns: 30%;
+  grid-gap: 20px;
 }
 
 .cv-main__left {
@@ -54,6 +60,4 @@ main {
   grid-column-start: 2;
 }
 
-.cv-section {
-  padding-right: 40px;
-}
+.cv-section {}
