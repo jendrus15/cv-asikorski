@@ -49,7 +49,6 @@ class SkillStar extends Component {
 
 class SkillBar extends Component {
   render() {
-    
     return (
       <div className='skills-item'>
         {this.props.data.icon && 
@@ -92,17 +91,18 @@ class Skills extends Component {
       const linkText = this.state.showAll ? 'Show less' : 'Show more';
       
     return (
-      <div className="cv-section">
+      <div className={this.props.className}>
         <SectionHeader title={this.props.title} />
         
         <div className='skills__items'>
             {usedData.map((item, index) => {
-              return <SkillBar data={item} key={index} />
+                if(this.props.type === 'bar') return <SkillBar data={item} key={index} />
+                return <SkillStar data={item} key={index} />
             })}
         </div>
 
         {this.props.max &&
-            <a className='skills__toggle-button' onClick={this.toggleState}>{linkText}</a>
+            <span className='skills__toggle-button' onClick={this.toggleState}>{linkText}</span>
         }
       </div>
     );

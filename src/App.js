@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SectionHeader from './SectionHeader.js';
 
 import './css/App.css';
+import './css/info.css';
 import {info, employment, education, courses, skills, languages} from './data.js';
 
 import Employment from './Employment.js';
@@ -24,14 +25,19 @@ class App extends Component {
         </header>
         <main>
           <div className="cv-main__left">
+
             <div className="cv-section">
               <SectionHeader title={'Info'} />
               <div className="info-details">
-                <div>PHONE</div>
-                <a target="_blank" rel="noopener noreferrer" href={`callto:${info.phone}`}>{info.phone}</a>
+                <div className="info-details__detail">
+                    <div className="info-details__name">Phone</div>
+                    <a className="info-details__link" target="_blank" rel="noopener noreferrer" href={`callto:${info.phone}`}>{info.phone}</a>
+                </div>
                 
-                <div>EMAIL</div>
-                <a target="_blank" rel="noopener noreferrer" href={`mailto:${info.email}`}>{info.email}</a>
+                <div className="info-details__detail">
+                    <div className="info-details__name">Email</div>
+                    <a className="info-details__link" target="_blank" rel="noopener noreferrer" href={`mailto:${info.email}`}>{info.email}</a>
+                </div>
               </div>
             </div>
             
@@ -44,18 +50,23 @@ class App extends Component {
               </div>
             </div>
             
-            {//<Skills className="cv-section" data={skills} title={'Skills'} max={10} />}
-            }
+            <Skills data={skills} title={'Skills'} max={10} type="star" className={"cv-section skills__items__left"}/>
             
-            <Skills className="cv-section" data={languages} title={'Languages'} />
+            <Skills className={"cv-section"} data={languages} title={'Languages'} type="bar" />
 
           </div>
+
           <div className="cv-main__right">
             <Profile className="cv-section" />
             <Employment className="cv-section" data={employment} />
             <Education className="cv-section" data={education} />
             
-            <Skills className="cv-section" data={skills} title={'Skills'} max={10} />
+            <Skills className="cv-section skills__items__main" 
+                data={skills} 
+                title={'Skills'} 
+                max={10}
+                type={'bar'}
+            />
             
             <Courses className="cv-section" data={courses} />
             
@@ -67,6 +78,7 @@ class App extends Component {
                 })}
               </div>
             </div>
+
           </div>
         </main>
       </div>

@@ -4,7 +4,7 @@ import SectionHeader from './SectionHeader.js';
 class Profile extends Component {
   render() {
     return (
-      <div className='cv-section'>
+      <div className={this.props.className}>
         <SectionHeader title={'Profile'} />
         <p>Programmer by nature, Frontend by choice. I have been an experienced programmer for 7 years. I started my 
         professional career during my studies, creating a commercial product written in PHP. Over the years I have used 

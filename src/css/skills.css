@@ -5,6 +5,10 @@
   padding: 0 5px;
 }
 
+.skills__items__left {
+    display: none;
+}
+
 .skills-item__icon {
     width: 40px;
     height: 40px;
@@ -76,7 +80,12 @@
 }
 
 @media print {
-    .skills__toggle-button {
+    .skills__toggle-button,
+    .skills__items__main {
         display: none;
+    }
+    
+    .skills__items__left {
+        display: block;
     }
 }

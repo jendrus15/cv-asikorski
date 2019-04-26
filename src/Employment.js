@@ -21,7 +21,7 @@ class EmploymentItem extends Component {
 class Employment extends Component {
   render() {
     return (
-      <div className='cv-section'>
+      <div className={this.props.className}>
         <SectionHeader title={'Employment history'} />
         
         {this.props.data.map((item, index) => {

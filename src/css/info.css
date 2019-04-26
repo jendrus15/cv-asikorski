@@ -1,0 +1,12 @@
+.info-details {}
+
+.info-details__detail {
+    margin-bottom: 10px;
+}
+
+.info-details__name {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.info-details__link {}
